@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Basutkar's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rahul Basutkar</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">My Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Computer Engineering Graduate | Java Developer | TDD Enthusiast </p>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hello! I'm Rahul Basutkar, a Computer Engineering graduate with a strong focus on backend development. I am passionate about coding and creating innovative solutions using Java, Test-Driven Development (TDD), and microservices.</p>
+                <p>Proficient in Docker, skilled in containerizing applications and managing efficient deployments. My hands-on experience with TDD ensures that I write clean, testable, and maintainable code.</p>
+                <p>I am committed to continuous learning and collaboration on cutting-edge projects.</p>
+            </div>
+            <div class="about-image">
+                <div class="profile-container">
+                    <img src="me2.jpg" alt="Rahul Basutkar">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="projects" class="section">
+        <h2>My Works</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>VExpo: Smart Exhibition Management System</h3>
+                <p>Developed web and mobile app with admin roles and personalized logins. The mobile app provides exhibition details, QR scanning, and recommendations.</p>
+            </div>
+            <div class="project-card">
+                <h3>Unusual Spends</h3>
+                <p>Developed a Java-based application to monitor unusual spending, using TDD, domain analysis, and design patterns for a robust system managing customers, credit cards, and transactions with integrated alerts.</p>
+            </div>
+            <div class="project-card">
+                <h3>Sign Language Recognition App</h3>
+                <p>Developed an Android app for real-time gesture-to-text translation to aid communication for physically challenged users, with a 98% accuracy in capturing the sign from real-time images.</p>
+            </div>
+            <div class="project-card">
+                <h3>TaskMaster CLI</h3>
+                <p>TaskMaster CLI is a Java-based command-line application for efficient task management, using OOP principles and JSON for data storage. It allows users to add, list (by various filters), mark, and remove tasks, with a safe exit feature to ensure data is saved correctly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-links" class="section">
+        <div class="contact-links-container">
+            <section id="contact" class="contact-section">
+                <h2>Contact Me</h2>
+                <form id="contact-form" action="https://formspree.io/f/xwpelyvk" method="post">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+    
+            <section id="links" class="contact-section">
+                <h2>Links</h2>
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/rahul-basutkar-936bb2190" target="_blank" class="social-link">
+                            <img src="linkedin.png" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/rahulbasutkar04" target="_blank" class="social-link">
+                            <img src="github.png" alt="GitHub">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/rahul_basutkar03/" target="_blank" class="social-link">
+                            <img src="insta.png" alt="Instagram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://leetcode.com/u/Rahulbasutkar/" target="_blank" class="social-link">
+                            <img src="coding.png" alt="LeetCode">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f0f0f0;
+    overflow: auto; /* Allows scrolling */
+}
+
+/* WebKit browsers like Chrome and Safari */
+body::-webkit-scrollbar {
+    width: 0; /* Hides scrollbar width */
+    height: 0; /* Hides horizontal scrollbar */
+}
+
+/* For Firefox */
+body {
+    scrollbar-width: none; /* Hides scrollbar */
+}
+
+/* For Internet Explorer and Edge */
+body {
+    -ms-overflow-style: none; /* Hides scrollbar */
+}
+
+header {
+    background: #949994;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('java.jpg') no-repeat center center/cover;
+}
+
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* About Me Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #ffffff; /* White background for About Me section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: center;
+    background: #f9f9f9; /* Light background */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-container {
+    width: 300px; /* Increased size */
+    height: 300px; /* Increased size */
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.profile-container:hover {
+    transform: perspective(800px) rotateY(15deg);
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Increased shadow */
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Increased shadow */
+}
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Default shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Contact and Links Sections */
+.contact-links-container {
+    width: 80%;
+    margin: auto;
+}
+
+.contact-section {
+    margin-bottom: 50px; /* Add spacing between sections */
+    background: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px; /* Add padding */
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center align form elements */
+}
+
+#contact-form input, #contact-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%; /* Full width */
+    max-width: 500px; /* Limit width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Links Section */
+#links {
+    text-align: center;
+    background: #f9f9f9; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px; /* Add padding */
+}
+
+#links h2 {
+    margin-bottom: 20px;
+}
+
+#links ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margin */
+}
+
+#links ul li {
+    margin: 0; /* Remove margin to keep links side by side */
+}
+
+.social-link img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-link:hover img {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #links ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        gap: 10px; /* Adjust space between links */
+    }
+}
+
+
+/* Button and link base styles */
+button, a {
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element stays within the button/link */
+    transition: transform 0.2s ease; /* Smooth transition for scaling effect */
+}
+
+/* Click animation */
+button:active, a:active {
+    transform: scale(0.95); /* Slightly shrink the element on click */
+}
+
+/* Optional: Ripple effect for button and link clicks */
+button::before, a::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2); /* Darker color for the ripple */
+    width: 100px; /* Ripple size */
+    height: 100px; /* Ripple size */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+
+/* Ripple effect on click */
+button:active::before, a:active::before {
+    width: 300px; /* Ripple expansion */
+    height: 300px; /* Ripple expansion */
+    opacity: 0.4;
+}
+
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: center;
+    position: relative; /* Add this to enable absolute positioning of the cursor */
+}
+
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: #fff; /* Optional: add a background color to the section */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px; /* Adjust padding to create space around the text */
+    text-align: left; /* Align text to the left */
+    line-height: 1.6; /* Improve readability */
+    max-width: 600px; /* Limit the width of the text container */
+    margin-right: 20px; /* Add space between text and image */
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-container {
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adjust shadow as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+}
