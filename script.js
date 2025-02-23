@@ -26,3 +26,17 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         alert('There was a problem with your submission. Please try again.');
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const thankYou = document.getElementById("thank-you");
+
+    window.addEventListener("scroll", function () {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+            thankYou.classList.add("show");
+        } else {
+            thankYou.classList.remove("show");
+        }
+    });
+});
+
+
