@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rahul Basutkar's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dynamic-background">
+    
     <header>
         <nav>
             <div class="logo">Rahul Basutkar</div>
@@ -22,8 +26,13 @@
     <section id="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Software Developer | Java | TDD Enthusiast | Microservices</p>
+            <h1>Rahul Basutkar</h1>
+            <p class="hero-subtitle">Software Developer & TDD Enthusiast</p>
+            <p class="hero-description">Specializing in Java, Spring Boot, and Microservices Architecture</p>
+            <div class="hero-cta">
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="#projects" class="cta-button secondary">View My Work</a>
+            </div>
         </div>
     </section>
 
@@ -42,6 +51,77 @@
         </div>
     </section>
     
+    <section id="skills" class="section skills-section">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <div class="skill-item">
+                    <span class="skill-name">Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Spring Boot</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Microservices</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Testing & Quality</h3>
+                <div class="skill-item">
+                    <span class="skill-name">TDD</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">JUnit</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Mockito</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>DevOps & Tools</h3>
+                <div class="skill-item">
+                    <span class="skill-name">Docker</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">CI/CD</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="work-experience" class="work-experience-container">
         <section id="projects" class="section work-section">
             <h2>My Works</h2>
@@ -70,7 +150,7 @@
             <div class="projects-container">
                 <div class="project-card">
                     <h3>Software Developer</h3>
-                    <p><a href="https://connectingdotsinfotech.com/#/home" target="_blank">ConnectingDots Infotech</a> | Octomeber 2024 - Present</p>
+                    <p><a href="https://connectingdotsinfotech.com/#/home" target="_blank">ConnectingDots Infotech</a> | October 2023 - Present</p>
                     <p>Working on backend development using Java, Spring Boot, and microservices architecture. Implementing TDD practices to ensure high-quality, maintainable code.</p>
                 </div>
                 <div class="project-card">
@@ -123,11 +203,12 @@
         </div>
 
         <div id="thank-you" class="thank-you">
-            <h6><b>Checkout links..👀</b></h6>
-    
+            <h6><b>Connect with me on social media</b></h6>
         </div>
         
     </section>
+
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
 
     <script src="script.js"></script>
 </body>
