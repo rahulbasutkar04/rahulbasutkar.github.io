@@ -108,29 +108,45 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Prevent default form submission
                 
-                // Get form data
-                const formData = new FormData(this);
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.textContent;
+                const formData = new FormData(this);
                 
                 // Show loading state
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 
-                // Simulate form submission (replace with actual form handling)
-                setTimeout(() => {
-                    // Show success message
-                    showNotification('Message sent successfully!', 'success');
-                    
-                    // Reset form
-                    this.reset();
-                    
+                // Submit form data to Formspree using fetch
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        showNotification('Message sent successfully! 🎉', 'success');
+                        
+                        // Reset form
+                        this.reset();
+                    } else {
+                        // Show error message
+                        showNotification('Failed to send message. Please try again.', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification('Failed to send message. Please try again.', 'error');
+                })
+                .finally(() => {
                     // Reset button
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                }, 2000);
+                });
             });
         }
     }
@@ -182,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 20px;
             right: 20px;
             padding: 1rem 2rem;
-            background: ${type === 'success' ? '#10b981' : '#3b82f6'};
+            background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
             color: white;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
