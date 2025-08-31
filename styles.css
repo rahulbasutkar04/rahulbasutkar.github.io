@@ -231,6 +231,12 @@ nav {
     line-height: 1.8;
 }
 
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-container {
     position: relative;
     border-radius: 20px;
@@ -238,6 +244,8 @@ nav {
     box-shadow: var(--shadow-heavy);
     transform: perspective(1000px) rotateY(-5deg);
     transition: transform 0.3s ease;
+    max-width: 400px;
+    width: 100%;
 }
 
 .profile-container:hover {
@@ -263,6 +271,101 @@ nav {
 /* Skills Section */
 .skills-section {
     background: var(--bg-primary);
+}
+
+/* Achievements Section */
+.achievements-section {
+    background: var(--bg-secondary);
+}
+
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-secondary);
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.achievement-prize {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #059669;
+    margin-bottom: 0.5rem;
+    background: rgba(5, 150, 105, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.achievement-org, .achievement-location {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.achievement-project {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.achievement-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .skills-container {
@@ -612,9 +715,32 @@ nav {
         font-size: 2.5rem;
     }
     
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    .profile-container {
+        max-width: 300px;
+        margin: 0 auto;
+        transform: perspective(1000px) rotateY(0deg);
     }
     
     .contact-links-container {
@@ -630,8 +756,104 @@ nav {
         grid-template-columns: 1fr;
     }
     
+    .achievements-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .achievement-card {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .achievement-icon {
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
+    
     .section {
         padding: 3rem 5%;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+/* Additional mobile improvements for very small screens */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .profile-container {
+        max-width: 250px;
+    }
+    
+    .section {
+        padding: 2rem 5%;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-section {
+        padding: 2rem;
+    }
+    
+    .social-link {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .social-link img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .achievement-card {
+        padding: 1.5rem;
+    }
+    
+    .achievement-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .achievement-prize, .achievement-project {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 
