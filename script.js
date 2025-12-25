@@ -151,17 +151,54 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Parallax Effects
+    // Parallax Effects (Desktop only)
     function initParallaxEffects() {
+        const parallaxElements = document.querySelectorAll('.profile-container');
+        
+        // Check if device is mobile (screen width <= 768px)
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // On mobile, keep the image static without parallax
+            parallaxElements.forEach(element => {
+                element.style.transform = 'perspective(1000px) rotateY(0deg)';
+            });
+            return;
+        }
+        
+        // Desktop: Apply parallax effect on scroll
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.profile-container');
             
             parallaxElements.forEach(element => {
                 const speed = 0.5;
                 const yPos = -(scrolled * speed);
                 element.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${yPos}px)`;
             });
+        });
+        
+        // Handle window resize to disable/enable parallax when switching between mobile and desktop
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const isMobileNow = window.innerWidth <= 768;
+                
+                if (isMobileNow) {
+                    // Reset transform on mobile
+                    parallaxElements.forEach(element => {
+                        element.style.transform = 'perspective(1000px) rotateY(0deg)';
+                    });
+                } else {
+                    // Re-enable parallax on desktop
+                    const scrolled = window.pageYOffset;
+                    parallaxElements.forEach(element => {
+                        const speed = 0.5;
+                        const yPos = -(scrolled * speed);
+                        element.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${yPos}px)`;
+                    });
+                }
+            }, 250);
         });
     }
     
