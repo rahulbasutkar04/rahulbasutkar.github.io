@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initParallaxEffects();
     initTypingEffect();
+    initExperienceModal();
     
     // Scroll to Top Button
     function initScrollToTop() {
@@ -151,7 +152,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Parallax Effects (Desktop only)
+    // Parallax Effects - Disabled for desktop (water waves animation instead)
+    // Mobile handling remains the same
     function initParallaxEffects() {
         const parallaxElements = document.querySelectorAll('.profile-container');
         
@@ -159,46 +161,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMobile = window.innerWidth <= 768;
         
         if (isMobile) {
-            // On mobile, keep the image static without parallax
+            // On mobile, keep the image static without any effects
             parallaxElements.forEach(element => {
-                element.style.transform = 'perspective(1000px) rotateY(0deg)';
+                element.style.transform = 'none';
             });
             return;
         }
         
-        // Desktop: Apply parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${yPos}px)`;
-            });
-        });
-        
-        // Handle window resize to disable/enable parallax when switching between mobile and desktop
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                const isMobileNow = window.innerWidth <= 768;
-                
-                if (isMobileNow) {
-                    // Reset transform on mobile
-                    parallaxElements.forEach(element => {
-                        element.style.transform = 'perspective(1000px) rotateY(0deg)';
-                    });
-                } else {
-                    // Re-enable parallax on desktop
-                    const scrolled = window.pageYOffset;
-                    parallaxElements.forEach(element => {
-                        const speed = 0.5;
-                        const yPos = -(scrolled * speed);
-                        element.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${yPos}px)`;
-                    });
-                }
-            }, 250);
+        // Desktop: No parallax/floating animation - static image with water waves CSS animation
+        parallaxElements.forEach(element => {
+            element.style.transform = 'none';
         });
     }
     
@@ -221,6 +193,117 @@ document.addEventListener('DOMContentLoaded', function() {
             // Start typing effect after a short delay
             setTimeout(typeWriter, 500);
         }
+    }
+    
+    // Experience detail modal
+    function initExperienceModal() {
+        const experienceDetails = {
+            cdi: {
+                role: 'Software Developer',
+                company: 'ConnectingDots Infotech',
+                projects: [
+                    {
+                        name: 'ULLU & Atrangii — OTT Platform',
+                        points: [
+                            'Built end-to-end secure APIs with role-based access control.',
+                            'Integrated payment gateways — Razorpay and Easebuzz on Atrangii; Google In-App recurring payments on ULLU.',
+                            'Optimized code, followed best practices, and maintained API documentation for smooth handover to cross-functional teams.'
+                        ],
+                        tech: ['Java', 'Spring Boot', 'MongoDB', 'Docker', 'Spring Security']
+                    },
+                    {
+                        name: 'Hariom App/Web — Devotional Application',
+                        points: [
+                            'Developed REST APIs and resolved production bugs.',
+                            'Implemented Vishesh Seva and Vishesh Puja flows with proper design and structure.'
+                        ],
+                        tech: ['Java', 'Spring Boot', 'REST APIs']
+                    },
+                    {
+                        name: 'Chottulink — Deeplink Platform',
+                        points: [
+                            'Created and built secure REST APIs with cross-server integration.',
+                            'Used Docker for deployment and worked on the recurring payments module.',
+                            'Fixed production issues with proper debugging practices.'
+                        ],
+                        tech: ['Java', 'Spring Boot', 'Docker', 'REST APIs']
+                    }
+                ]
+            },
+            amaap: {
+                role: 'Intern — Java Development',
+                company: 'Amaap Technologies',
+                projects: [
+                    {
+                        name: 'Credit Card Expenditure Tracker',
+                        points: [
+                            'Built a system to notify users monthly about their credit card expenditure and send spending alerts.',
+                            'Applied clean code principles, TDD, unit testing, design patterns, and industry best practices.'
+                        ],
+                        tech: ['Java', 'TDD', 'JUnit', 'Design Patterns']
+                    }
+                ]
+            }
+        };
+
+        const modal = document.getElementById('experience-modal');
+        if (!modal) return;
+
+        const modalBody = modal.querySelector('.experience-modal-body');
+        const overlay = modal.querySelector('.experience-modal-overlay');
+        const closeBtn = modal.querySelector('.experience-modal-close');
+
+        function renderDetails(data) {
+            let html = `<h2 id="experience-modal-title">${data.company}</h2><p class="exp-role">${data.role}</p>`;
+            data.projects.forEach(project => {
+                html += `<div class="exp-project"><h3>${project.name}</h3><ul>`;
+                project.points.forEach(point => {
+                    html += `<li>${point}</li>`;
+                });
+                html += '</ul><div class="exp-tech">';
+                project.tech.forEach(t => {
+                    html += `<span>${t}</span>`;
+                });
+                html += '</div></div>';
+            });
+            modalBody.innerHTML = html;
+        }
+
+        function openModal(expId) {
+            const data = experienceDetails[expId];
+            if (!data) return;
+            renderDetails(data);
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.experience-card--expandable').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a')) return;
+                openModal(card.dataset.expId);
+            });
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(card.dataset.expId);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
     }
     
     // Notification System

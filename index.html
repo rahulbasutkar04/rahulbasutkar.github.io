@@ -29,8 +29,8 @@
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>Rahul Basutkar</h1>
-            <p class="hero-subtitle">Software Developer & TDD Enthusiast</p>
-            <p class="hero-description">Specializing in Java, Spring Boot, Microservices Architecture.</p>
+            <p class="hero-subtitle">Software Engineer & TDD Enthusiast</p>
+            <p class="hero-description">Specializing in Java, ServiceNow, Spring Boot, and Microservices Architecture.</p>
             <div class="hero-cta">
                 <a href="#contact" class="cta-button">Get in Touch</a>
                 <a href="#projects" class="cta-button secondary">View My Work</a>
@@ -42,7 +42,7 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>About Me</h2>
-                <p>Hello! I'm Rahul Basutkar, a Software Developer at ConnectingDots Infotech. I specialize in Java, Test-Driven Development (TDD), microservices, and modern UI technologies including React. I am proficient in Docker, with experience in containerizing applications and managing efficient deployments.</p>
+                <p>Hello! I'm Rahul Basutkar, a Software Engineer at Hadron GBS. Along with Java, I work on ServiceNow service development, enterprise service management, Test-Driven Development (TDD), microservices, and modern UI technologies including React. I am proficient in Docker, with experience in containerizing applications and managing efficient deployments.</p>
                 <p>My expertise in TDD enables me to write clean, testable, and maintainable code, ensuring high-quality software development. I am passionate about coding and dedicated to continuous learning, always eager to collaborate on cutting-edge projects and deliver innovative solutions.</p>
             </div>
             <div class="about-image">
@@ -330,12 +330,19 @@
         <section id="experience" class="section experience-section">
             <h2>Experience</h2>
             <div class="projects-container">
-                <div class="project-card">
-                    <h3>Software Developer</h3>
-                    <p><a href="https://connectingdotsinfotech.com/#/home" target="_blank">ConnectingDots Infotech</a> | October 2023 - Present</p>
-                    <p>Working on backend development using Java, Spring Boot, and microservices architecture. Implementing TDD practices to ensure high-quality, maintainable code.</p>
+                <div class="project-card experience-card">
+                    <h3>Software Engineer</h3>
+                    <p><a href="https://hadrongbs.com/" target="_blank">Hadron GBS</a> | June 2026 - Present</p>
+                    <p>Working as a Software Engineer, contributing to Java-based development alongside ServiceNow service development — building and configuring enterprise service management solutions across ITSM and related modules.</p>
                 </div>
-                <div class="project-card">
+                <div class="project-card experience-card experience-card--expandable" data-exp-id="cdi" tabindex="0" role="button" aria-label="View ConnectingDots Infotech work details">
+                    <div class="experience-card-hint">Click to see work details</div>
+                    <h3>Software Developer</h3>
+                    <p><a href="https://connectingdotsinfotech.com/#/home" target="_blank">ConnectingDots Infotech</a> | October 2023 - May 2026</p>
+                    <p>Worked on backend development using Java, Spring Boot, and microservices architecture. Implemented TDD practices to ensure high-quality, maintainable code.</p>
+                </div>
+                <div class="project-card experience-card experience-card--expandable" data-exp-id="amaap" tabindex="0" role="button" aria-label="View Amaap Technologies work details">
+                    <div class="experience-card-hint">Click to see work details</div>
                     <h3>Intern - Java Development</h3>
                     <p>Amaap Technologies | 2023</p>
                     <p>Contributed to Java backend development, gaining experience in Spring Boot, database management, and REST API design.</p>
@@ -345,49 +352,99 @@
     </section>
     
     
-    <section id="contact-links" class="section">
+    <section id="contact-links" class="section contact-links-section">
+        <div class="contact-links-header">
+            <h2>Get In Touch</h2>
+            <p class="contact-links-subtitle">Have a project in mind or want to connect? I'd love to hear from you.</p>
+        </div>
         <div class="contact-links-container">
-            <section id="contact" class="contact-section">
-                <h2>Contact Me</h2>
+            <section id="contact" class="contact-card">
+                <div class="contact-card-top">
+                    <span class="contact-card-badge">Contact</span>
+                    <h3>Send a Message</h3>
+                    <p class="contact-card-desc">Fill out the form below and I'll get back to you as soon as possible.</p>
+                </div>
                 <form id="contact-form" action="https://formspree.io/f/xgvlwzyz" method="post">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit">
+                        <span>Send Message</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
                 </form>
             </section>
     
-            <section id="links" class="contact-section">
-                <h2>Links</h2>
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/in/rahul-basutkar-936bb2190" target="_blank" class="social-link">
-                            <img src="linkedin.png" alt="LinkedIn">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/rahulbasutkar04" target="_blank" class="social-link">
-                            <img src="github.png" alt="GitHub">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/rahul_basutkar03/" target="_blank" class="social-link">
-                            <img src="insta.png" alt="Instagram">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://leetcode.com/u/Rahulbasutkar/" target="_blank" class="social-link">
-                            <img src="coding.png" alt="LeetCode">
-                        </a>
-                    </li>
-                </ul>
+            <section id="links" class="links-card">
+                <div class="contact-card-top">
+                    <span class="contact-card-badge">Links</span>
+                    <h3>Connect With Me</h3>
+                    <p class="contact-card-desc">Find me on these platforms for collaborations, code, and updates.</p>
+                </div>
+                <div class="social-links-grid">
+                    <a href="https://www.linkedin.com/in/rahul-basutkar-936bb2190" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                        <span class="social-link-icon">
+                            <img src="linkedin.png" alt="">
+                        </span>
+                        <span class="social-link-info">
+                            <span class="social-link-name">LinkedIn</span>
+                            <span class="social-link-handle">Professional profile</span>
+                        </span>
+                        <span class="social-link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/rahulbasutkar04" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                        <span class="social-link-icon">
+                            <img src="github.png" alt="">
+                        </span>
+                        <span class="social-link-info">
+                            <span class="social-link-name">GitHub</span>
+                            <span class="social-link-handle">Projects & repositories</span>
+                        </span>
+                        <span class="social-link-arrow">→</span>
+                    </a>
+                    <a href="https://www.instagram.com/rahul_basutkar03/" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                        <span class="social-link-icon">
+                            <img src="insta.png" alt="">
+                        </span>
+                        <span class="social-link-info">
+                            <span class="social-link-name">Instagram</span>
+                            <span class="social-link-handle">Personal updates</span>
+                        </span>
+                        <span class="social-link-arrow">→</span>
+                    </a>
+                    <a href="https://leetcode.com/u/Rahulbasutkar/" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                        <span class="social-link-icon">
+                            <img src="coding.png" alt="">
+                        </span>
+                        <span class="social-link-info">
+                            <span class="social-link-name">LeetCode</span>
+                            <span class="social-link-handle">Coding practice</span>
+                        </span>
+                        <span class="social-link-arrow">→</span>
+                    </a>
+                </div>
             </section>
         </div>
-
-        
     </section>
 
     <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <div id="experience-modal" class="experience-modal" aria-hidden="true">
+        <div class="experience-modal-overlay"></div>
+        <div class="experience-modal-content" role="dialog" aria-modal="true" aria-labelledby="experience-modal-title">
+            <button class="experience-modal-close" aria-label="Close">&times;</button>
+            <div class="experience-modal-body"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
