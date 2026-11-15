@@ -198,49 +198,86 @@ document.addEventListener('DOMContentLoaded', function() {
     // Experience detail modal
     function initExperienceModal() {
         const experienceDetails = {
+            hadron: {
+                role: 'Software Engineer',
+                company: 'Hadron GBS',
+                projects: [
+                    {
+                        name: 'ServiceNow Platform \u2014 Administration & ITSM',
+                        points: [
+                            'Work across platform administration and ITSM processes \u2014 Incident, Problem and Change.',
+                            'Configure and customize applications using JavaScript, Business Rules, Script Includes, Client Scripts, UI Policies, UI Actions, ACLs and Notifications.',
+                            'Build REST-based integrations, handling authentication, API communication and data synchronization between ServiceNow and external systems.'
+                        ],
+                        tech: ['ServiceNow', 'ITSM', 'JavaScript', 'GlideRecord', 'REST APIs', 'ACLs']
+                    },
+                    {
+                        name: 'CMDB & CSDM \u2014 Data Foundations',
+                        points: [
+                            'Work with the Configuration Management Database and Common Service Data Model as a certified Implementation Specialist in Data Foundations.'
+                        ],
+                        tech: ['CMDB', 'CSDM', 'ServiceNow']
+                    }
+                ]
+            },
             cdi: {
-                role: 'Software Developer',
+                role: 'Software Developer \u00b7 Nov 2024 \u2013 May 2026 (Trainee from Oct 2024)',
                 company: 'ConnectingDots Infotech',
                 projects: [
                     {
-                        name: 'ULLU & Atrangii — OTT Platform',
+                        name: 'OTT Streaming Platform \u2014 Subscription-based',
                         points: [
-                            'Built end-to-end secure APIs with role-based access control.',
-                            'Integrated payment gateways — Razorpay and Easebuzz on Atrangii; Google In-App recurring payments on ULLU.',
-                            'Optimized code, followed best practices, and maintained API documentation for smooth handover to cross-functional teams.'
+                            'Built and optimized Java Spring Boot backend services for an OTT platform supporting 25K+ active users.',
+                            'Designed and implemented secure REST APIs with role-based access control.',
+                            'Integrated subscription payment workflows with third-party gateways and Google Play In-App Billing.',
+                            'Improved API response time by 20% through query optimization and database indexing.',
+                            'Designed a scalable NoSQL data model that improved read performance for content browsing.'
                         ],
-                        tech: ['Java', 'Spring Boot', 'MongoDB', 'Docker', 'Spring Security']
+                        tech: ['Java', 'Spring Boot 2.7', 'MongoDB', 'Docker', 'Spring Security', 'Google Play Billing']
                     },
                     {
-                        name: 'Hariom App/Web — Devotional Application',
+                        name: 'ChottuLink \u2014 Deeplink & Attribution Platform',
+                        points: [
+                            'Built secure REST APIs and analytics modules with cross-server integration.',
+                            'Integrated AWS S3 with presigned URLs for secure file management.',
+                            'Developed an MCP (Model Context Protocol) server to automate AI-driven onboarding and user registration.',
+                            'Used Docker for deployment and worked on the recurring payments module.'
+                        ],
+                        tech: ['Java 17', 'Spring Boot', 'MongoDB', 'Docker', 'AWS S3', 'MCP']
+                    },
+                    {
+                        name: 'HariOm App/Web \u2014 Devotional Application',
                         points: [
                             'Developed REST APIs and resolved production bugs.',
-                            'Implemented Vishesh Seva and Vishesh Puja flows with proper design and structure.'
+                            'Implemented Vishesh Seva and Vishesh Puja flows with proper design and structure.',
+                            'Implemented server-side rendering with Thymeleaf for dynamic, backend-driven web views.'
                         ],
-                        tech: ['Java', 'Spring Boot', 'REST APIs']
+                        tech: ['Java', 'Spring Boot', 'REST APIs', 'Thymeleaf']
                     },
                     {
-                        name: 'Chottulink — Deeplink Platform',
+                        name: 'Software Developer Trainee \u2014 Oct\u2013Nov 2024',
                         points: [
-                            'Created and built secure REST APIs with cross-server integration.',
-                            'Used Docker for deployment and worked on the recurring payments module.',
-                            'Fixed production issues with proper debugging practices.'
+                            'Developed RESTful APIs in Spring Boot with full CRUD functionality and role-based authentication via Spring Security.',
+                            'Built dynamic web pages with Thymeleaf and added email functionality for notifications.',
+                            'Used MongoDB for data storage, focusing on efficient queries to improve performance.'
                         ],
-                        tech: ['Java', 'Spring Boot', 'Docker', 'REST APIs']
+                        tech: ['Spring Boot', 'Spring Security', 'Thymeleaf', 'MongoDB', 'Agile']
                     }
                 ]
             },
             amaap: {
-                role: 'Intern — Java Development',
+                role: 'Back End Developer \u00b7 Mar \u2013 May 2024',
                 company: 'Amaap Technologies',
                 projects: [
                     {
-                        name: 'Credit Card Expenditure Tracker',
+                        name: 'Microservices & Credit Card Expenditure Tracker',
                         points: [
+                            'Built microservices using Spring Boot and Docker, integrating both SQL and NoSQL databases.',
+                            'Raised unit test coverage from 70% to 95% using JUnit, Mockito and JaCoCo.',
                             'Built a system to notify users monthly about their credit card expenditure and send spending alerts.',
-                            'Applied clean code principles, TDD, unit testing, design patterns, and industry best practices.'
+                            'Applied TDD, clean code principles and design patterns, reducing production defects and improving maintainability.'
                         ],
-                        tech: ['Java', 'TDD', 'JUnit', 'Design Patterns']
+                        tech: ['Java', 'Spring Boot', 'Docker', 'TDD', 'JUnit', 'Mockito', 'JaCoCo']
                     }
                 ]
             }
